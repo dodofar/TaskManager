@@ -30,4 +30,12 @@ public class TaskController
 	{
 		return taskDao.save(task);
 	}
+
+	@DeleteMapping("/{id}")
+	public void deleteTaskById(@PathVariable Long id)
+	{
+		taskDao.deleteById(id);
+	}
+
+	//TODO fare getbyid + deleteall
 }
