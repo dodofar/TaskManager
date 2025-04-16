@@ -37,5 +37,8 @@ public class TaskController
 		taskDao.deleteById(id);
 	}
 
-	//TODO fare getbyid + deleteall
+	//TODO fare metodo chiamato getTaskById, che prende tramite pathvariabile id e restituisce la task con tale id
+	//mappatura: /tasks/{id} GET
+	//Fare metodo chiamato deleteAllTasks, void, che non prende variabili e cancella tutte le tasks
+	//mappatura: /tasks DELETE
 }
