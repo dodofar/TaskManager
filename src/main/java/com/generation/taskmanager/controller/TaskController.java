@@ -4,6 +4,7 @@ import com.generation.taskmanager.model.dao.TaskDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
 
 //Clean architecture, Martin C. Fowler (uncle bob), le regole sono:
@@ -41,4 +42,16 @@ public class TaskController
 	//mappatura: /tasks/{id} GET
 	//Fare metodo chiamato deleteAllTasks, void, che non prende variabili e cancella tutte le tasks
 	//mappatura: /tasks DELETE
+
+	@GetMapping("/{id}")
+	public Task getTaskById(@PathVariable Long id)
+	{
+		return taskDao.findById(id).orElse(null);
+	}
+
+	@DeleteMapping
+	public void deleteAllTasks()
+	{
+		taskDao.deleteAll();
+	}
 }
